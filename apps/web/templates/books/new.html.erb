@@ -1,0 +1,19 @@
+<h2>Add book</h2>
+
+<%=
+  form_for :book, '/books' do
+    div class: 'input' do
+      label      :title
+      text_field :title
+    end
+
+    div class: 'input' do
+      label      :author
+      text_field :author
+    end
+
+    div class: 'controls' do
+      submit 'Create Book'
+    end
+  end
+%>
