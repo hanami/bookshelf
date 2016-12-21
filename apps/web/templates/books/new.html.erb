@@ -12,7 +12,7 @@
 <% end %>
 
 <%=
-  form_for :book, '/books' do
+  form_for :book, routes.books_path do
     div class: 'input' do
       label      :title
       text_field :title
