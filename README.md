@@ -16,7 +16,8 @@ __Hanami__ supports Ruby (MRI) 2.3+
 git clone git@github.com:hanami/bookshelf.git hanami-bookshelf
 cd hanami-bookshelf
 bundle install
-bundle exec hanami server # visit http://localhost:2300
+bundle exec hanami db prepare
+bundle exec hanami server # visit http://localhost:2300/books/new
 ```
 
 This repository is intended to be used for instructional purposes.
