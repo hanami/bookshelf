@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 gem 'bundler'
 gem 'rake'
-gem 'hanami',       '~> 0.9'
-gem 'hanami-model', '~> 0.7'
+gem 'hanami',       '1.0.0.beta1'
+gem 'hanami-model', '~> 1.0.0.beta1'
 
 gem 'sqlite3'
 
