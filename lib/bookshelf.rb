@@ -1,1 +1,1 @@
-Hanami::Utils.require!("#{__dir__}/bookshelf")
+# This file was intentionally left blank ;)
