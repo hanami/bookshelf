@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'bundler'
 gem 'rake'
 gem 'hanami',       '1.0.0.beta1'
 gem 'hanami-model', '~> 1.0.0.beta1'
