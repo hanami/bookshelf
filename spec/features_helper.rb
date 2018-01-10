@@ -2,10 +2,11 @@
 require_relative './spec_helper'
 
 require 'capybara'
-require 'capybara/dsl'
+require 'capybara/rspec'
 
-Capybara.app = Hanami.app
+RSpec.configure do |config|
+  config.include RSpec::FeatureExampleGroup
 
-class MiniTest::Spec
-  include Capybara::DSL
+  config.include Capybara::DSL,           feature: true
+  config.include Capybara::RSpecMatchers, feature: true
 end
