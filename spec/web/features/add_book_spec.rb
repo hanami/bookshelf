@@ -15,8 +15,8 @@ describe 'Add a book' do
       click_button 'Create'
     end
 
-    current_path.must_equal('/books')
-    assert page.has_content?('New book')
+    expect(page).to have_current_path('/books')
+    expect(page).to have_content('New book')
   end
 
   it 'displays list of errors when params contains errors' do
@@ -26,10 +26,10 @@ describe 'Add a book' do
       click_button 'Create'
     end
 
-    current_path.must_equal('/books')
+    expect(page).to have_current_path('/books')
 
-    assert page.has_content?('There was a problem with your submission')
-    assert page.has_content?('Title must be filled')
-    assert page.has_content?('Author must be filled')
+    expect(page).to have_content('There was a problem with your submission')
+    expect(page).to have_content('Title must be filled')
+    expect(page).to have_content('Author must be filled')
   end
 end
