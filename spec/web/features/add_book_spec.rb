@@ -9,14 +9,14 @@ describe 'Add a book' do
     visit '/books/new'
 
     within 'form#book-form' do
-      fill_in 'Title',  with: 'New book'
+      fill_in 'Title',  with: 'Example book'
       fill_in 'Author', with: 'Some author'
 
       click_button 'Create'
     end
 
     current_path.must_equal('/books')
-    assert page.has_content?('New book')
+    assert page.has_content?('Example book')
   end
 
   it 'displays list of errors when params contains errors' do
