@@ -8,8 +8,9 @@ gem 'sqlite3'
 
 group :development do
   # Code reloading
-  # See: http://hanamirb.org/guides/projects/code-reloading
-  gem 'shotgun'
+  # See: https://guides.hanamirb.org/projects/code-reloading/
+  gem 'shotgun', platforms: :ruby
+  gem 'hanami-webconsole'
 end
 
 group :test, :development do
