@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Web
   module Controllers
     module Books
@@ -6,7 +8,7 @@ module Web
 
         expose :books
 
-        def call(params)
+        def call(_params)
           @books = BookRepository.new.all
         end
       end

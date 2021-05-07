@@ -1,9 +1,11 @@
-require 'features_helper'
+# frozen_string_literal: true
 
-RSpec.describe 'Visit home' do
-  it 'is successful' do
-    visit '/'
+require "features_helper"
 
-    expect(page).to have_content('Bookshelf')
+describe "Visit home" do
+  it "is successful" do
+    visit "/"
+
+    expect(page).to have_content("Bookshelf")
   end
 end

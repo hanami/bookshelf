@@ -1,5 +1,7 @@
-require 'hanami/helpers'
-require 'hanami/assets'
+# frozen_string_literal: true
+
+require "hanami/helpers"
+require "hanami/assets"
 
 module Web
   class Application < Hanami::Application
@@ -18,9 +20,9 @@ module Web
       #
       # When you add new directories, remember to add them here.
       #
-      load_paths << [
-        'controllers',
-        'views'
+      load_paths << %w[
+        controllers
+        views
       ]
 
       # Handle exceptions with HTTP statuses (true) or don't catch them (false).
@@ -36,7 +38,7 @@ module Web
       # Routes definitions for this application
       # See: http://www.rubydoc.info/gems/hanami-router#Usage
       #
-      routes 'config/routes'
+      routes "config/routes"
 
       # URI scheme used by the routing system to generate absolute URLs
       # Defaults to "http"
@@ -107,7 +109,7 @@ module Web
 
       # The relative path to templates
       #
-      templates 'templates'
+      templates "templates"
 
       ##
       # ASSETS
@@ -143,7 +145,7 @@ module Web
         # Specify sources for assets
         #
         sources << [
-          'assets'
+          "assets"
         ]
       end
 
@@ -162,7 +164,7 @@ module Web
       #   * https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options
       #   * https://www.owasp.org/index.php/Clickjacking
       #
-      security.x_frame_options 'DENY'
+      security.x_frame_options "DENY"
 
       # X-Content-Type-Options prevents browsers from interpreting files as
       # something else than declared by the content type in the HTTP headers.
@@ -173,7 +175,7 @@ module Web
       #   * https://msdn.microsoft.com/en-us/library/gg622941%28v=vs.85%29.aspx
       #   * https://blogs.msdn.microsoft.com/ie/2008/09/02/ie8-security-part-vi-beta-2-update
       #
-      security.x_content_type_options 'nosniff'
+      security.x_content_type_options "nosniff"
 
       # X-XSS-Protection is a HTTP header to determine the behavior of the
       # browser in case an XSS attack is detected.
@@ -183,7 +185,7 @@ module Web
       #   * https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
       #   * https://www.owasp.org/index.php/OWASP_Secure_Headers_Project#X-XSS-Protection
       #
-      security.x_xss_protection '1; mode=block'
+      security.x_xss_protection "1; mode=block"
 
       # Content-Security-Policy (CSP) is a HTTP header supported by modern
       # browsers. It determines trusted sources of execution for dynamic
@@ -220,7 +222,7 @@ module Web
       #
       #  * https://developer.mozilla.org/en-US/docs/Web/Security/CSP/CSP_policy_directives
       #
-      security.content_security_policy %{
+      security.content_security_policy %(
         form-action 'self';
         frame-ancestors 'self';
         base-uri 'self';
@@ -235,7 +237,7 @@ module Web
         child-src 'self';
         frame-src 'self';
         media-src 'self'
-      }
+      )
 
       ##
       # FRAMEWORKS

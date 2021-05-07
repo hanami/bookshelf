@@ -1,3 +1,5 @@
-require_relative 'config/environment'
+# frozen_string_literal: true
+
+require "./config/environment"
 
 run Hanami.app
