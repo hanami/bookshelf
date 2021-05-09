@@ -1,4 +1,8 @@
 # frozen_string_literal: true
 
-class Book < Hanami::Entity
+module Bookshelf
+  module Entities
+    class Book < ROM::Struct
+    end
+  end
 end

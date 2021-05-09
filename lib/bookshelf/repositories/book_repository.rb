@@ -1,4 +1,6 @@
 # frozen_string_literal: true
 
-class BookRepository < Hanami::Repository
+module Bookshelf
+  class BookRepository < Bookshelf::Repository
+  end
 end
