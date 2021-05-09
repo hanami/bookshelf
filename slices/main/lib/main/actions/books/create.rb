@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
-module Web
-  module Controllers
+module Main
+  module Actions
     module Books
-      class Create
-        include Web::Action
+      class Create < Main::Action
 
         params do
           required(:book).schema do

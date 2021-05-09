@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module Web
+module Main
   module Views
     module Books
-      class New
-        include Web::View
+      class Create < View::Base
+        template "books/new"
       end
     end
   end

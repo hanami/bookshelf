@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
-module Web
-  module Controllers
+module Main
+  module Actions
     module Books
-      class Index
-        include Web::Action
-
+      class Index < Main::Action
         expose :books
 
         def call(_params)

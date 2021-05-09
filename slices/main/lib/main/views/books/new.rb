@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
-module Web
+module Main
   module Views
     module Books
-      class Index
-        include Web::View
+      class New < View::Base
       end
     end
   end

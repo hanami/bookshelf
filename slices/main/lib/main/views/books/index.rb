@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
-module Web
+module Main
   module Views
     module Books
-      class Create
-        include Web::View
-        template "books/new"
+      class Index < Base::View
       end
     end
   end
