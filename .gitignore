@@ -2,3 +2,4 @@
 /public/assets*
 /tmp
 .rubocop-http*
+log/

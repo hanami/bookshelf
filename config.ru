@@ -1,5 +1,16 @@
 # frozen_string_literal: true
 
-require "./config/environment"
+require "rack/static"
+use Rack::Static,
+  urls: ["/assets"],
+  root: "public",
+  header_rules: [
+    ["/assets", {"Cache-Control" => "public, max-age=31536000"}]
+  ]
 
+require "byebug"
+require "rack/method_override"
+use Rack::MethodOverride
+
+require "hanami/boot"
 run Hanami.app
