@@ -4,9 +4,6 @@ module Main
   module Actions
     module Home
       class Index < Main::Action
-
-        def call(params)
-        end
       end
     end
   end

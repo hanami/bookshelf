@@ -4,10 +4,9 @@ module Main
   module Actions
     module Books
       class Index < Main::Action
-        expose :books
-
-        def call(_params)
-          @books = BookRepository.new.all
+        def handle(request, response)
+          response[:books] = Bookshelf::Repositories::BookRepository.new.books.to_a
+          super
         end
       end
     end

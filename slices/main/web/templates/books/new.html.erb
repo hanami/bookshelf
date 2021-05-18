@@ -1,6 +1,6 @@
 <h2>Add book</h2>
 
-<% unless params.valid? %>
+<% if params && !params.valid? %>
   <div class="errors">
     <h3>There was a problem with your submission</h3>
     <ul>
@@ -12,7 +12,7 @@
 <% end %>
 
 <%=
-  form_for :book, routes.books_path do
+  form_for(:book, routes.path(:books), params: params) do
     div class: 'input' do
       label      :title
       text_field :title

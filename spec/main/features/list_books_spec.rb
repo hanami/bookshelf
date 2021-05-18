@@ -3,9 +3,9 @@
 require "features_helper"
 
 describe "List books" do
-  let(:repository) { BookRepository.new }
+  let(:repository) { Bookshelf::Repositories::BookRepository.new }
   before do
-    repository.clear
+    repository.books.delete
 
     repository.create(title: "Practical Object-Oriented Design in Ruby",
                       author: "Sandi Metz")

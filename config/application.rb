@@ -7,7 +7,7 @@ rescue LoadError => e
 end
 
 require "hanami"
-require_relative "settings" # FIXME: This isn't in the template. Why?
+# require_relative "settings" # FIXME: This isn't in the template. Why?
 
 module Bookshelf
   class Application < Hanami::Application

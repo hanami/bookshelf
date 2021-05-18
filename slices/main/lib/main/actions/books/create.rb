@@ -4,7 +4,7 @@ module Main
   module Actions
     module Books
       class Create < Main::Action
-
+        # FIXME: Duplicated from books.new action
         params do
           required(:book).schema do
             required(:title).filled(:str?)
@@ -12,13 +12,17 @@ module Main
           end
         end
 
-        def call(params)
-          if params.valid?
-            BookRepository.new.create(params[:book])
+        def handle(request, response)
+          if request.params.valid?
+            response[:book] = Bookshelf::Repositories::BookRepository.new.create(
+              request.params[:book]
+            )
 
-            redirect_to routes.books_path
+            response.redirect_to routes.path(:books)
+            super
           else
-            self.status = 422
+            super
+            response.status = 422
           end
         end
       end

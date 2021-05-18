@@ -4,7 +4,8 @@ module Main
   module Views
     module Books
       class Create < View::Base
-        template "books/new"
+        # TODO: It might be worth seeing if this could inherit from Books::New
+        config.template = "books/new"
       end
     end
   end
