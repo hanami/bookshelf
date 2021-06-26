@@ -2,7 +2,7 @@ require 'spec_helper'
 require_relative '../../../../apps/web/controllers/books/create'
 
 RSpec.describe Web::Controllers::Books::Create do
-  let(:action) { Web::Controllers::Books::Create.new }
+  let(:action) { described_class.new }
   let(:repository) { BookRepository.new }
 
   after do
