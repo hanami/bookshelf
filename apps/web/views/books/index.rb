@@ -1,5 +1,9 @@
-module Web::Views::Books
-  class Index
-    include Web::View
+module Web
+  module Views
+    module Books
+      class Index
+        include Web::View
+      end
+    end
   end
 end
