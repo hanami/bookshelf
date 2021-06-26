@@ -1,7 +1,7 @@
 require 'spec_helper'
 require_relative '../../../../apps/web/controllers/books/index'
 
-describe Web::Controllers::Books::Index do
+RSpec.describe Web::Controllers::Books::Index do
   let(:action) { Web::Controllers::Books::Index.new }
   let(:params) { Hash[] }
 

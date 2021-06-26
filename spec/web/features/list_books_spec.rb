@@ -1,6 +1,6 @@
 require 'features_helper'
 
-describe 'List books' do
+RSpec.describe 'List books' do
   let(:repository) { BookRepository.new }
   before do
     repository.clear
