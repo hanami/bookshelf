@@ -1,6 +1,3 @@
-require 'spec_helper'
-require_relative '../../../../apps/web/controllers/books/new'
-
 RSpec.describe Web::Controllers::Books::New do
   let(:action) { described_class.new }
   let(:params) { Hash[] }

@@ -1,6 +1,3 @@
-require 'spec_helper'
-require_relative '../../../../apps/web/views/books/create'
-
 RSpec.describe Web::Views::Books::Create do
   let(:exposures) { Hash[foo: 'bar'] }
   let(:template)  { Hanami::View::Template.new('apps/web/templates/books/create.html.erb') }
