@@ -4,8 +4,6 @@ module Web
       class Create
         include Web::Action
 
-        expose :book
-
         params do
           required(:book).schema do
             required(:title).filled(:str?)
@@ -15,7 +13,7 @@ module Web
 
         def call(params)
           if params.valid?
-            @book = BookRepository.new.create(params[:book])
+            BookRepository.new.create(params[:book])
 
             redirect_to routes.books_path
           else

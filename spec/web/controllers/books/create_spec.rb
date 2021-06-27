@@ -7,7 +7,7 @@ RSpec.describe Web::Controllers::Books::Create do
   end
 
   describe 'with valid params' do
-    let(:params) { Hash[book: { title: '1984', author: 'George Orwell' }] }
+    let(:params) { Hash[book: { title: 'Confident Ruby', author: 'Avdi Grimm' }] }
 
     it 'creates a new book' do
       action.call(params)
@@ -28,12 +28,12 @@ RSpec.describe Web::Controllers::Books::Create do
   describe 'with invalid params' do
     let(:params) { Hash[book: {}] }
 
-    it 're-renders the books#new view' do
+    it 'returns HTTP client error' do
       response = action.call(params)
       expect(response[0]).to eq(422)
     end
 
-    it 'sets errors attribute accordingly' do
+    it 'dumps errors in params' do
       action.call(params)
       errors = action.params.errors
 
