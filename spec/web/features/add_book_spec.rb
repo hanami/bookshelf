@@ -1,7 +1,7 @@
 require 'features_helper'
 
 RSpec.describe 'Add a book' do
-  after do
+  before do
     BookRepository.new.clear
   end
 
