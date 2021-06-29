@@ -6,7 +6,7 @@ RSpec.describe Web::Controllers::Books::Create, type: :action do
     repository.clear
   end
 
-  describe 'with valid params' do
+  context 'with valid params' do
     let(:params) { Hash[book: { title: 'Confident Ruby', author: 'Avdi Grimm' }] }
 
     it 'creates a new book' do
@@ -25,7 +25,7 @@ RSpec.describe Web::Controllers::Books::Create, type: :action do
     end
   end
 
-  describe 'with invalid params' do
+  context 'with invalid params' do
     let(:params) { Hash[book: {}] }
 
     it 'returns HTTP client error' do
