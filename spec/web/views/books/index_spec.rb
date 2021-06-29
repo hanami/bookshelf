@@ -1,4 +1,4 @@
-RSpec.describe Web::Views::Books::Index do
+RSpec.describe Web::Views::Books::Index, type: :view do
   let(:exposures) { Hash[books: []] }
   let(:template)  { Hanami::View::Template.new('apps/web/templates/books/index.html.erb') }
   let(:view)      { described_class.new(template, exposures) }

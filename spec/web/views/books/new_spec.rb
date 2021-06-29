@@ -1,4 +1,4 @@
-RSpec.describe Web::Views::Books::New do
+RSpec.describe Web::Views::Books::New, type: :view do
   let(:params)    { OpenStruct.new(valid?: false, error_messages: ['Title must be filled', 'Author must be filled']) }
   let(:exposures) { Hash[params: params] }
   let(:template)  { Hanami::View::Template.new('apps/web/templates/books/new.html.erb') }

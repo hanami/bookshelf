@@ -1,4 +1,4 @@
-RSpec.describe Web::Controllers::Books::Create do
+RSpec.describe Web::Controllers::Books::Create, type: :action do
   let(:action) { described_class.new }
   let(:repository) { BookRepository.new }
 

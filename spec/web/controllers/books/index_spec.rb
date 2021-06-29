@@ -1,4 +1,4 @@
-RSpec.describe Web::Controllers::Books::Index do
+RSpec.describe Web::Controllers::Books::Index, type: :action do
   let(:action) { described_class.new }
   let(:params) { Hash[] }
 
