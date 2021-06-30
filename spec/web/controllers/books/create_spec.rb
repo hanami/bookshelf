@@ -1,16 +1,13 @@
-require 'spec_helper'
-require_relative '../../../../apps/web/controllers/books/create'
-
-describe Web::Controllers::Books::Create do
-  let(:action) { Web::Controllers::Books::Create.new }
+RSpec.describe Web::Controllers::Books::Create, type: :action do
+  let(:action) { described_class.new }
   let(:repository) { BookRepository.new }
 
-  after do
+  before do
     repository.clear
   end
 
-  describe 'with valid params' do
-    let(:params) { Hash[book: { title: '1984', author: 'George Orwell' }] }
+  context 'with valid params' do
+    let(:params) { Hash[book: { title: 'Confident Ruby', author: 'Avdi Grimm' }] }
 
     it 'creates a new book' do
       action.call(params)
@@ -28,15 +25,15 @@ describe Web::Controllers::Books::Create do
     end
   end
 
-  describe 'with invalid params' do
+  context 'with invalid params' do
     let(:params) { Hash[book: {}] }
 
-    it 're-renders the books#new view' do
+    it 'returns HTTP client error' do
       response = action.call(params)
       expect(response[0]).to eq(422)
     end
 
-    it 'sets errors attribute accordingly' do
+    it 'dumps errors in params' do
       action.call(params)
       errors = action.params.errors
 

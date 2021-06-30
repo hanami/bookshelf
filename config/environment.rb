@@ -18,7 +18,7 @@ Hanami.configure do
     #    adapter :sql, 'postgres://localhost/bookshelf_development'
     #    adapter :sql, 'mysql://localhost/bookshelf_development'
     #
-    adapter :sql, ENV['DATABASE_URL']
+    adapter :sql, ENV.fetch('DATABASE_URL')
 
     ##
     # Migrations
@@ -30,20 +30,20 @@ Hanami.configure do
   mailer do
     root 'lib/bookshelf/mailers'
 
-    # See http://hanamirb.org/guides/mailers/delivery
+    # See https://guides.hanamirb.org/mailers/delivery
     delivery :test
   end
 
   environment :development do
-    # See: http://hanamirb.org/guides/projects/logging
+    # See: https://guides.hanamirb.org/projects/logging
     logger level: :debug
   end
 
   environment :production do
-    logger level: :info, formatter: :json
+    logger level: :info, formatter: :json, filter: []
 
     mailer do
-      delivery :smtp, address: ENV['SMTP_HOST'], port: ENV['SMTP_PORT']
+      delivery :smtp, address: ENV.fetch('SMTP_HOST'), port: ENV.fetch('SMTP_PORT')
     end
   end
 end
