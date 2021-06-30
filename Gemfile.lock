@@ -32,6 +32,21 @@ GIT
       rack (~> 2.0)
 
 GIT
+  remote: https://github.com/hanami/hanami.git
+  revision: f93c4d2618171c6527cd18d1d394b61ba3f87d9c
+  branch: main
+  specs:
+    hanami (2.0.0.alpha2)
+      bundler (>= 1.16, < 3)
+      dry-core (~> 0.4)
+      dry-inflector (~> 0.1, >= 0.1.2)
+      dry-monitor
+      dry-system (~> 0.19, >= 0.19.0)
+      hanami-cli (~> 2.0.alpha)
+      hanami-utils (~> 2.0.alpha)
+      zeitwerk (~> 2.4)
+
+GIT
   remote: https://github.com/hanami/helpers.git
   revision: 1b1c2cf49c95cbb93ff27f6b10b52b72783217d0
   branch: task/hanami-view-2-compat
@@ -108,15 +123,6 @@ GEM
       temple
     faker (2.18.0)
       i18n (>= 1.6, < 2)
-    hanami (2.0.0.alpha2)
-      bundler (>= 1.16, < 3)
-      dry-core (~> 0.4)
-      dry-inflector (~> 0.1, >= 0.1.2)
-      dry-monitor
-      dry-system (~> 0.19, >= 0.19.0)
-      hanami-cli (~> 2.0.alpha)
-      hanami-utils (~> 2.0.alpha)
-      zeitwerk (~> 2.4)
     hanami-cli (2.0.0.alpha2)
       bundler (~> 2.1)
       dry-cli (~> 0.6)
@@ -249,7 +255,7 @@ DEPENDENCIES
   dry-system!
   dry-types (~> 1.0)
   erbse (~> 0.1)
-  hanami (~> 2.0.0.alpha2)
+  hanami!
   hanami-controller!
   hanami-helpers!
   hanami-router (~> 2.0.0.alpha2)

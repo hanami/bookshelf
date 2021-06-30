@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 gem "rake"
-gem "hanami", "~> 2.0.0.alpha2"
+gem "hanami", github: "hanami/hanami", branch: "main" #, "~> 2.0.0.alpha2"
 gem "hanami-router",      "~> 2.0.0.alpha2"
 gem "hanami-controller", github: "hanami/controller", branch: "automatically-pass-exposures-to-view" #"~> 2.0.0.alpha2"
 gem "hanami-view",        "~> 2.0.0.alpha2"
