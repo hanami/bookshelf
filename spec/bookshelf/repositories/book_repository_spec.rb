@@ -1,5 +1,11 @@
-require 'spec_helper'
+# frozen_string_literal: true
 
-describe BookRepository do
-  # place your tests here
+require "spec_helper"
+
+module Bookshelf
+  module Repositories
+    describe BookRepository do
+      # place your tests here
+    end
+  end
 end
