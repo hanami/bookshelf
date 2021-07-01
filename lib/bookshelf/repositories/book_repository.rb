@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
 module Bookshelf
-  class BookRepository < Bookshelf::Repository
+  module Repositories
+    class BookRepository < Bookshelf::Repository[:books]
+      commands :create,
+        use: :timestamps,
+        plugins_options:
+          { timestamps: { timestamps: [:created_at, :updated_at] } }
+
+      auto_struct true
+    end
   end
 end

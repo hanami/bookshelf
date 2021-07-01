@@ -3,7 +3,9 @@
 require "spec_helper"
 
 module Bookshelf
-  describe BookRepository do
-    # place your tests here
+  module Repositories
+    describe BookRepository do
+      # place your tests here
+    end
   end
 end

@@ -2,6 +2,7 @@
 
 require "rake"
 require "rake/testtask"
+require "rom/sql/rake_task"
 
 task :environment do
   require "hanami/init"

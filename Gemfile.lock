@@ -137,6 +137,11 @@ GEM
       dry-struct (~> 1.0)
       dry-types (~> 1.0)
       transproc (~> 1.0, >= 1.1.0)
+    rom-factory (0.10.2)
+      dry-configurable (~> 0.7)
+      dry-core (~> 0.4)
+      faker (>= 1.7, < 3.0)
+      rom-core (~> 5.0)
     rom-repository (5.2.2)
       dry-core (~> 0.4)
       dry-initializer (~> 3.0, >= 3.0.1)
@@ -199,6 +204,7 @@ DEPENDENCIES
   puma
   rake
   rom (~> 5.2)
+  rom-factory (~> 0.10)
   rom-sql (~> 3.2)
   rspec
   rubocop

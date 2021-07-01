@@ -10,6 +10,7 @@ gem "hanami-view",       "~> 2.0.0.alpha2"
 
 gem "sqlite3"
 gem "rom", "~> 5.2"
+gem "rom-factory", "~> 0.10"
 gem "rom-sql", "~> 3.2"
 gem "sequel", "~> 5.32"
 
