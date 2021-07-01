@@ -1,2 +1,6 @@
 inherit_from:
   - https://raw.githubusercontent.com/hanami/devtools/main/.rubocop.yml
+AllCops:
+  Exclude:
+    - bin/hanami
+    - config/puma.rb

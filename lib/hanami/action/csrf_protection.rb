@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This is a standalone copy of Hanami::Action::CsrfProtection from Hanami gem,
 # adapted from
 # https://github.com/hanami/hanami/blob/master/lib/hanami/action/csrf_protection.rb
@@ -5,8 +7,8 @@
 # This module is absent from the unstable branch, and we want to keep CSRF
 # protection in place until a new approach can be provided upstream.
 
-require 'rack/utils'
-require 'securerandom'
+require "rack/utils"
+require "securerandom"
 
 module Hanami
   # @api private
@@ -92,12 +94,10 @@ module Hanami
       #
       # @since 0.4.0
       # @api private
-      IDEMPOTENT_HTTP_METHODS = Hash[
-        'GET'     => true,
-        'HEAD'    => true,
-        'TRACE'   => true,
-        'OPTIONS' => true
-      ].freeze
+      IDEMPOTENT_HTTP_METHODS = {"GET" => true,
+                                 "HEAD" => true,
+                                 "TRACE" => true,
+                                 "OPTIONS" => true}.freeze
 
       # @since 0.4.0
       # @api private
@@ -115,11 +115,12 @@ module Hanami
       end
 
       private
+
       # Set CSRF Token in session
       #
       # @since 0.4.0
       # @api private
-      def set_csrf_token(req, res)
+      def set_csrf_token(_req, res)
         res.session[CSRF_TOKEN] ||= generate_csrf_token
       end
 
@@ -153,7 +154,7 @@ module Hanami
       # Verify the CSRF token was passed in params.
       #
       # @api private
-      def missing_csrf_token?(req, res)
+      def missing_csrf_token?(req, _res)
         Hanami::Utils::Blank.blank?(req.params[CSRF_TOKEN])
       end
 
@@ -187,7 +188,7 @@ module Hanami
       #       end
       #     end
       #   end
-      def verify_csrf_token?(req, res)
+      def verify_csrf_token?(req, _res)
         !IDEMPOTENT_HTTP_METHODS[req.request_method]
       end
 
@@ -217,7 +218,7 @@ module Hanami
       #       end
       #     end
       #   end
-      def handle_invalid_csrf_token(req, res)
+      def handle_invalid_csrf_token(_req, res)
         res.session.clear
         raise InvalidCSRFTokenError.new
       end

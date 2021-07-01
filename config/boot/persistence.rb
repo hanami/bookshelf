@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Hanami.application.register_bootable :persistence, namespace: true do |container|
   init do
     require "rom-changeset"

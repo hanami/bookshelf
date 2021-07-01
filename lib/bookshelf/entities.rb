@@ -6,4 +6,4 @@ module Bookshelf
   end
 end
 
-Dir[File.join(__dir__, "entities", "*.rb")].each(&method(:require))
+Dir[File.join(__dir__, "entities", "*.rb")].sort.each(&method(:require))

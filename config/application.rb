@@ -2,8 +2,8 @@
 
 begin
   require "break"
-rescue LoadError => e
-  raise unless e.path == "break"
+rescue LoadError => exception
+  raise unless exception.path == "break"
 end
 
 require "hanami"

@@ -2,11 +2,11 @@
 
 require "rack/static"
 use Rack::Static,
-  urls: ["/assets"],
-  root: "public",
-  header_rules: [
-    ["/assets", {"Cache-Control" => "public, max-age=31536000"}]
-  ]
+    urls: ["/assets"],
+    root: "public",
+    header_rules: [
+      ["/assets", {"Cache-Control" => "public, max-age=31536000"}]
+    ]
 
 require "byebug"
 require "rack/method_override"
