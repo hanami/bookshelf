@@ -14,6 +14,7 @@ gem "rom-sql", "~> 3.2"
 gem "sequel", "~> 5.32"
 
 gem "dry-types", "~> 1.0"
+gem "dry-inflector", "0.2.0" # 0.2.1 includes a CSRF acronym
 
 
 gem "puma"

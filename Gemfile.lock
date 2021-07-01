@@ -32,7 +32,7 @@ GEM
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.5, >= 0.5)
     dry-files (0.1.0)
-    dry-inflector (0.2.1)
+    dry-inflector (0.2.0)
     dry-initializer (3.0.4)
     dry-logic (1.2.0)
       concurrent-ruby (~> 1.0)
@@ -190,6 +190,7 @@ DEPENDENCIES
   byebug
   capybara
   dotenv (~> 2.7)
+  dry-inflector (= 0.2.0)
   dry-types (~> 1.0)
   hanami (~> 2.0.0.alpha2)
   hanami-controller (~> 2.0.0.alpha2)
