@@ -2,7 +2,10 @@
 
 source "https://rubygems.org"
 
+# Core gems
 gem "rake"
+
+# Application framework
 gem "hanami", github: "hanami/hanami", branch: "main" # , "~> 2.0.0.alpha2"
 gem "hanami-router", "~> 2.0.0.alpha2"
 gem "hanami-controller", github: "hanami/controller", branch: "automatically-pass-exposures-to-view" # "~> 2.0.0.alpha2"
@@ -10,17 +13,19 @@ gem "hanami-view",        "~> 2.0.0.alpha2"
 gem "hanami-validations", "~> 2.0.0.alpha1"
 gem "hanami-helpers", github: "hanami/helpers", branch: "task/hanami-view-2-compat"
 
+# HTTP
+gem "puma"
+
+# Database
 gem "sqlite3"
 gem "rom", "~> 5.2"
 gem "rom-factory", "~> 0.10"
 gem "rom-sql", "~> 3.2"
 gem "sequel", "~> 5.32"
 
+# Application
 gem "dry-types", "~> 1.0"
-
 gem "erbse", "~> 0.1"
-
-gem "puma"
 
 group :development do
   # Code reloading
@@ -35,8 +40,10 @@ group :test, :development do
 end
 
 group :test do
-  gem "rspec"
-  gem "capybara"
+  gem "rspec", "~> 3.9"
+  gem "capybara", "~> 3.0"
+  gem "database_cleaner", "~> 1.7"
+  gem "simplecov", "~> 0.17"
 end
 
 group :production do
