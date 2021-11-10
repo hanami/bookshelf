@@ -6,7 +6,6 @@ require "capybara"
 require "capybara/dsl"
 require "capybara/rspec"
 
-Capybara.app = Hanami.app
 RSpec.configure do |config|
   config.include RSpec::FeatureExampleGroup
 
