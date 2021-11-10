@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 require "spec_helper"
+require_relative "../../../slices/main/entities/book"
 
-module Bookshelf
+module Main
   module Entities
     describe Book do
       it "can be created with Factory.structs" do
