@@ -6,10 +6,10 @@ source "https://rubygems.org"
 gem "rake"
 
 # Application framework
-gem "hanami", github: "hanami/hanami", branch: "main" # , "~> 2.0.0.alpha2"
-gem "hanami-router", "~> 2.0.0.alpha2"
-gem "hanami-controller", github: "hanami/controller", branch: "automatically-pass-exposures-to-view" # "~> 2.0.0.alpha2"
-gem "hanami-view",        "~> 2.0.0.alpha2"
+gem "hanami",             "~> 2.0.0.alpha3"
+gem "hanami-router",      "~> 2.0.0.alpha3"
+gem "hanami-controller",  "~> 2.0.0.alpha3"
+gem "hanami-view",        "~> 2.0.0.alpha3"
 gem "hanami-validations", "~> 2.0.0.alpha1"
 gem "hanami-helpers", github: "hanami/helpers", branch: "task/hanami-view-2-compat"
 
