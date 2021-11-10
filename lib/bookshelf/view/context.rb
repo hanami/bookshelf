@@ -2,6 +2,7 @@
 
 require "hanami/view/context"
 require "hanami/helpers"
+require "hanami/action/csrf_protection"
 
 module Bookshelf
   module View
@@ -35,7 +36,7 @@ module Bookshelf
       end
 
       def csrf_token
-        request.session[Hanami::Action::CsrfProtection::CSRF_TOKEN]
+        request.session[Hanami::Action::CSRFProtection::CSRF_TOKEN]
       end
 
       # FIXME: Shouldn't need this (it's needed for the form_for helper)
