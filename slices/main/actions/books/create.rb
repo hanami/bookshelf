@@ -19,9 +19,7 @@ module Main
             )
 
             response.redirect_to routes.path(:books)
-            super
           else
-            super
             response.status = 422
           end
         end

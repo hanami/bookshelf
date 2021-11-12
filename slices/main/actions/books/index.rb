@@ -6,7 +6,6 @@ module Main
       class Index < Main::Action
         def handle(request, response)
           response[:books] = Bookshelf::Repositories::BookRepository.new.books.to_a
-          super
         end
       end
     end
