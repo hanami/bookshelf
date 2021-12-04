@@ -23,7 +23,10 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     concurrent-ruby (1.1.9)
-    database_cleaner (1.99.0)
+    database_cleaner-core (2.0.1)
+    database_cleaner-sequel (2.0.0)
+      database_cleaner-core (~> 2.0.0)
+      sequel
     diff-lcs (1.4.4)
     docile (1.4.0)
     dotenv (2.7.6)
@@ -235,7 +238,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara (~> 3.0)
-  database_cleaner (~> 1.7)
+  database_cleaner-sequel (~> 2.0)
   dotenv (~> 2.7)
   dry-types (~> 1.0)
   erbse (~> 0.1)
@@ -258,4 +261,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   2.2.21
+   2.2.32

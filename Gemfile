@@ -42,7 +42,7 @@ end
 group :test do
   gem "rspec", "~> 3.9"
   gem "capybara", "~> 3.0"
-  gem "database_cleaner", "~> 1.7"
+  gem "database_cleaner-sequel", "~> 2.0"
   gem "simplecov", "~> 0.17"
 end
 
