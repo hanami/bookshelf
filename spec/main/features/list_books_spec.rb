@@ -2,11 +2,10 @@
 
 require "features_helper"
 
-describe "List books" do
-  let(:repository) { Main::Repositories::BookRepository.new }
-  before do
-    repository.books.delete
+describe "List books", :db do
+  let(:repository) { Main::Slice.container["repositories.book_repository"] }
 
+  before do
     repository.create(title: "Practical Object-Oriented Design in Ruby",
                       author: "Sandi Metz")
   end

@@ -2,11 +2,7 @@
 
 require "features_helper"
 
-describe "Add a book" do
-  after do
-    Main::Repositories::BookRepository.new.books.delete
-  end
-
+describe "Add a book", :db do
   it "can create a new book" do
     visit "/books/new"
 

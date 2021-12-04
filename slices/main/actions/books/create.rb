@@ -4,6 +4,8 @@ module Main
   module Actions
     module Books
       class Create < Main::Action
+        include Deps["repositories.book_repository"]
+
         # FIXME: Duplicated from books.new action
         params do
           required(:book).schema do
@@ -14,7 +16,7 @@ module Main
 
         def handle(request, response)
           if request.params.valid?
-            response[:book] = Main::Repositories::BookRepository.new.create(
+            response[:book] = book_repository.create(
               request.params[:book]
             )
 
