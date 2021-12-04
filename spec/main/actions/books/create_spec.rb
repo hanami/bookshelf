@@ -4,7 +4,7 @@ require "spec_helper"
 
 describe Main::Actions::Books::Create do
   let(:action) { Main::Actions::Books::Create.new }
-  let(:repository) { Bookshelf::Repositories::BookRepository.new }
+  let(:repository) { Main::Repositories::BookRepository.new }
 
   after do
     repository.books.delete

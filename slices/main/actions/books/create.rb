@@ -14,7 +14,7 @@ module Main
 
         def handle(request, response)
           if request.params.valid?
-            response[:book] = Bookshelf::Repositories::BookRepository.new.create(
+            response[:book] = Main::Repositories::BookRepository.new.create(
               request.params[:book]
             )
 

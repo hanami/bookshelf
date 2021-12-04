@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-module Bookshelf
+module Main
   module Repositories
     describe BookRepository do
       # place your tests here

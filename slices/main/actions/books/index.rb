@@ -5,7 +5,7 @@ module Main
     module Books
       class Index < Main::Action
         def handle(request, response)
-          response[:books] = Bookshelf::Repositories::BookRepository.new.books.to_a
+          response[:books] = Main::Repositories::BookRepository.new.books.to_a
         end
       end
     end

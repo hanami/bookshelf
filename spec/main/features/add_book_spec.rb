@@ -4,7 +4,7 @@ require "features_helper"
 
 describe "Add a book" do
   after do
-    Bookshelf::Repositories::BookRepository.new.books.delete
+    Main::Repositories::BookRepository.new.books.delete
   end
 
   it "can create a new book" do

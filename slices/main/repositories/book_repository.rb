@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Bookshelf
+module Main
   module Repositories
     class BookRepository < Bookshelf::Repository[:books]
       commands :create,

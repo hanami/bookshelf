@@ -3,7 +3,7 @@
 require "features_helper"
 
 describe "List books" do
-  let(:repository) { Bookshelf::Repositories::BookRepository.new }
+  let(:repository) { Main::Repositories::BookRepository.new }
   before do
     repository.books.delete
 
