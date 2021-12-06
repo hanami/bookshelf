@@ -3,21 +3,15 @@
 require "spec_helper"
 
 describe Main::Actions::Books::Create, :db do
-  let(:action) { Main::Actions::Books::Create.new }
-  let(:repository) { Main::Repositories::BookRepository.new }
+  let(:action) { Main::Actions::Books::Create.new(book_repository: repository) }
+  let(:repository) { instance_double(Main::Repositories::BookRepository) }
 
   describe "with valid params" do
     let(:params) { {book: {title: "1984", author: "George Orwell"}} }
 
-    it "creates a new book" do
-      action.call(params)
-      book = repository.books.last
+    it "calls `create` on repository, redirects to books listing page" do
+      expect(repository).to receive(:create).with(params[:book])
 
-      expect(book.id).to_not be_nil
-      expect(book.title).to eq(params.dig(:book, :title))
-    end
-
-    it "redirects the user to the books listing" do
       response = action.call(params)
 
       expect(response.status).to eq(302)
