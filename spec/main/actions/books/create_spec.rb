@@ -4,7 +4,7 @@ require "spec_helper"
 
 describe Main::Actions::Books::Create, :db do
   let(:action) { Main::Actions::Books::Create.new }
-  let(:repository) { Main::Slice["repositories.book_repository"] }
+  let(:repository) { Main::Repositories::BookRepository.new }
 
   describe "with valid params" do
     let(:params) { {book: {title: "1984", author: "George Orwell"}} }
