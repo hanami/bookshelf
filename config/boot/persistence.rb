@@ -6,7 +6,11 @@ Hanami.application.register_bootable :persistence, namespace: true do |container
     require "rom/core"
     require "rom/sql"
 
-    rom_config = ROM::Configuration.new(:sql, container[:settings].database_url) do |config|
+    rom_config = ROM::Configuration.new(
+      :sql,
+      container[:settings].database_url,
+      { migrator: { path: "db/migrations" } }
+    ) do |config|
       config.relation(:books) do
         schema do
           attribute :id, Bookshelf::Types::Integer
