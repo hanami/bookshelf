@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe Main::Views::Books::Index do
+RSpec.describe Main::Views::Books::Index do
   let(:view) { Main::Views::Books::Index.new }
   let(:books) { Array[] }
   let(:rendered) { view.call(books: books) }

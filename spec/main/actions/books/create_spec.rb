@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe Main::Actions::Books::Create, :db do
+RSpec.describe Main::Actions::Books::Create, :db do
   let(:action) { Main::Actions::Books::Create.new(book_repository: repository) }
   let(:repository) { instance_double(Main::Repositories::BookRepository) }
 

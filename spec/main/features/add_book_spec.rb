@@ -2,7 +2,7 @@
 
 require "features_helper"
 
-describe "Add a book", :db do
+RSpec.describe "Add a book", :db do
   it "can create a new book" do
     visit "/books/new"
 

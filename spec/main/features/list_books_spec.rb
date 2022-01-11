@@ -2,7 +2,7 @@
 
 require "features_helper"
 
-describe "List books", :db do
+RSpec.describe "List books", :db do
   let(:repository) { Main::Slice.container["repositories.book_repository"] }
 
   before do

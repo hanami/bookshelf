@@ -3,7 +3,7 @@
 require "spec_helper"
 require "hanami/view"
 
-describe Main::Views::Books::Create do
+RSpec.describe Main::Views::Books::Create do
   let(:view)      { Main::Views::Books::Create.new }
   let(:rendered)  { view.call(params: params).to_s }
   let(:params) { instance_double(Hanami::Action::Params, valid?: true) }

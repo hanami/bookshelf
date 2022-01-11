@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe Main::Actions::Books::Index do
+RSpec.describe Main::Actions::Books::Index do
   let(:action) { Main::Actions::Books::Index.new }
   let(:params) { {} }
 

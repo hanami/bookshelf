@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe Main::Actions::Books::New do
+RSpec.describe Main::Actions::Books::New do
   let(:action) { Main::Actions::Books::New.new }
   let(:params) { {} }
 

@@ -5,7 +5,7 @@ require_relative "../../../slices/main/entities/book"
 
 module Main
   module Entities
-    describe Book do
+    RSpec.describe Book do
       it "can be created with Factory.structs" do
         # This wouldn't be in a real codebase. It's just for education
         book = Factory.structs[:book]

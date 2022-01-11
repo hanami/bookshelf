@@ -3,7 +3,7 @@
 require "spec_helper"
 require "hanami/view"
 
-describe Main::Views::Books::New do
+RSpec.describe Main::Views::Books::New do
   let(:view)      { Main::Views::Books::New.new }
   let(:rendered)  { view.call(params: params).to_s }
   let(:params) do
