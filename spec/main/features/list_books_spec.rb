@@ -6,6 +6,8 @@ RSpec.describe "List books", :db do
   let(:repository) { Main::Slice.container["repositories.book_repository"] }
 
   before do
+    repository.books.delete
+
     repository.create(title: "Practical Object-Oriented Design in Ruby",
                       author: "Sandi Metz")
   end
