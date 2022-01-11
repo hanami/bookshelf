@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require_relative "../../../slices/main/entities/book"
+require_relative "../../../slices/main/entities/book" # FIXME: shouldn't be necessary
 
 module Main
   module Entities
