@@ -7,7 +7,6 @@ module Main
              plugins_options:
                {timestamps: {timestamps: %i[created_at updated_at]}}
 
-    struct_namespace Entities
     auto_struct true
   end
 end
