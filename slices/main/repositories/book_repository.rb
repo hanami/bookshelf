@@ -2,13 +2,7 @@
 
 module Main
   module Repositories
-    class BookRepository < Bookshelf::Repository[:books]
-      commands :create,
-               use: :timestamps,
-               plugins_options:
-                 {timestamps: {timestamps: %i[created_at updated_at]}}
-
-      auto_struct true
+    class BookRepository < Repository[:books]
     end
   end
 end
