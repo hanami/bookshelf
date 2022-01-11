@@ -8,6 +8,7 @@ module Bookshelf
   module View
     class Context < Hanami::View::Context
       include Deps["settings"]
+      include Deps["routes_helper"]
       include Hanami::Helpers::FormHelper
 
       def initialize(**args)
@@ -44,9 +45,8 @@ module Bookshelf
         request.params
       end
 
-      # FIXME: Use Router's url_helpers
       def routes
-        Hanami.app.instance_variable_get(:@app).app.instance_variable_get(:@app).url_helpers
+        routes_helper
       end
 
       # FIXME: Use a real favion
