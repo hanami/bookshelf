@@ -10,9 +10,7 @@ with the Getting Started guide.
 That is, we do not want to add any features here to build out this application.
 
 ## Usage
-__Hanami__ v1.3 supports Ruby (MRI) 2.3, < 3.0.
-
-(Hanami v2.0 will support Ruby 3.0)
+Hanami v2.0 supports Ruby 3.0+
 
 ```bash
 git clone git@github.com:hanami/bookshelf.git hanami-bookshelf
