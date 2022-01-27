@@ -16,7 +16,7 @@ module Main
 
         def handle(request, response)
           if request.params.valid?
-            response[:book] = book_repository.create(request.params[:book])
+            book_repository.create(request.params[:book])
 
             response.redirect_to routes.path(:books)
           else
