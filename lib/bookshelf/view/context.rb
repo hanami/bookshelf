@@ -8,7 +8,6 @@ module Bookshelf
   module View
     class Context < Hanami::View::Context
       include Deps["settings"]
-      include Deps["routes_helper"]
       include Hanami::Helpers::FormHelper
 
       def initialize(**args)
@@ -43,10 +42,6 @@ module Bookshelf
       # FIXME: Shouldn't need this (it's needed for the form_for helper)
       def params
         request.params
-      end
-
-      def routes
-        routes_helper
       end
 
       # FIXME: Use a real favion
