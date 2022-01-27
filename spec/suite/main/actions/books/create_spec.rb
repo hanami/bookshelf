@@ -3,17 +3,18 @@
 require "spec_helper"
 
 RSpec.describe Main::Actions::Books::Create, :db do
-  let(:action) { Main::Actions::Books::Create.new(book_repository: repository) }
+  let(:action) { described_class.new(book_repository: repository) }
   let(:repository) { instance_double(Main::Repositories::BookRepository) }
 
   describe "with valid params" do
-    let(:params) { {book: {title: "1984", author: "George Orwell"}} }
+    let(:params) { {book: {title: "Confident Ruby", author: "Avdi Grimm"}} }
 
     it "calls `create` on repository, redirects to books listing page" do
-      expect(repository).to receive(:create).with(params[:book])
+      allow(repository).to receive(:create).with(params[:book])
 
       response = action.call(params)
 
+      expect(repository).to have_received(:create).with(params[:book])
       expect(response.status).to eq(302)
       expect(response.headers["Location"]).to eq("/books")
     end
