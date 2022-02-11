@@ -1,0 +1,13 @@
+# frozen_string_literal: true
+
+require "spec_helper"
+
+RSpec.describe Main::Actions::Books::New do
+  let(:action) { Main::Actions::Books::New.new }
+  let(:params) { {} }
+
+  it "is successful" do
+    response = action.call(params)
+    expect(response.status).to eq(200)
+  end
+end
