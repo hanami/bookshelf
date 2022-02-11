@@ -7,6 +7,6 @@ require_relative "db/factory"
 
 RSpec.configure do |config|
   config.before :suite do
-    Hanami.application.start_bootable :persistence
+    Hanami.application.start :persistence
   end
 end

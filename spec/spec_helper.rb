@@ -13,4 +13,4 @@ require_relative "support/rspec"
 require_relative "support/db"
 require_relative "support/capybara"
 
-Hanami.init
+Hanami.prepare
